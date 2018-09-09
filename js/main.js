@@ -1,4 +1,4 @@
-﻿var kitchen = new orderSoftClient();
+﻿var kitchen = new orderSoftClient();  
 
 window.onload = async () => {
     // Get the modal
@@ -11,10 +11,14 @@ window.onload = async () => {
     document.getElementById("login").classList.add("shown");
     document.getElementById("btnNext").onclick = async () => {
         try {
-            await init(ip);
+            var ip = document.getElementById("ip").value;
+            console.log('fuckingwork')
+            await kitchen.init(ip);
+            console.log('help1')
+            document.getElementById("serverAuthenticate").classList.add("hide");
+            console.log("help")
         } catch (error) {
-            error.toString
-            document.getElementById("wrongIP").innerHTML = error;
+            document.getElementById("wrongIP").innerHTML = error.toString();
             
         }
     }

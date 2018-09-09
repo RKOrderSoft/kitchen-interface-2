@@ -14,7 +14,7 @@
     </div>
     <div id="orders-container">
         <template id="displayOrder">
-            <p id="tableNum"></p>
+            <!--<p id="tableNum"></p>-->
         </template>
         <div class="order">Content goes here!</div>
         <div class="order">Content goes here!</div>
@@ -27,13 +27,11 @@
     </div>
     <div id="login" class="modal">
         <div class="modal-content">
-            <div>
+            <div id="serverAuthenticate">
                 <p1>Enter server IP</p1>
                 <input type="text" placeholder="Enter OrderSoft IP" id="ip" />
             </div>
             <button id="btnNext">Next</button>
-            <p id="wrongIP"></p>
-
             <div>
                 <p1>Username</p1>
                 <input disabled="disabled" type="text" placeholder="Enter username" id="username">
@@ -54,7 +52,7 @@
         <!-- modal 
             TODO shouldn't be in footer
         <div id="orderHistory" class="modal">
-            <!-- Modal content
+             Modal content
             <div class="modal-content">
                 <span class="close" id="close">&times;</span>
                 <p>big ol table of orders</p>

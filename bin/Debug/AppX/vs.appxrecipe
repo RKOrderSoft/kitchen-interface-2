@@ -32,13 +32,13 @@
     <AppXManifest Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-09-09T07:07:16.059</Modified>
+      <Modified>2018-09-09T08:46:08.977</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2018-09-09T08:40:18.329</Modified>
+      <Modified>2018-09-09T09:19:13.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\tetht.html">
       <PackagePath>js\tetht.html</PackagePath>
@@ -80,15 +80,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2018-09-09T08:39:40.695</Modified>
+      <Modified>2018-09-09T09:45:51.353</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\orderSoft.js">
       <PackagePath>js\orderSoft.js</PackagePath>
-      <Modified>2018-09-09T07:30:56.703</Modified>
+      <Modified>2018-09-09T09:44:40.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2018-09-09T08:05:09.333</Modified>
+      <Modified>2018-09-09T09:23:19.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\README.md">
       <PackagePath>js\README.md</PackagePath>
@@ -97,7 +97,7 @@
     <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-09-09T07:07:15.847</Modified>
+      <Modified>2018-09-09T08:46:08.707</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -71,8 +71,8 @@ class orderSoftClient {
 				await this.requestFromServer("test", objToSend, "POST");
 				resolve();
 			} catch (e) {
-				this._urlEndPoint = undefined;
-				throw Error(ip + " is not an ordersoft server");
+                this._urlEndPoint = undefined;
+				throw new Error(ip + " is not an ordersoft server");
 			}
 		});
 
