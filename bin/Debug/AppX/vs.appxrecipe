@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-J7RAFQL</Machine>
+    <WindowsUser>Henry Deng</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>6d2504b3-f8bf-4b44-9116-556e24680b25</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Henry Deng</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bld\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>
+    </WindowsSdkPath>
+    <LayoutDir>C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bin\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>64B3E2CA4369F56B9C8ACF05E8E9664DBC42C81F6AEDFF3B4A42FFA3F8A3CC2C</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>6d2504b3-f8bf-4b44-9116-556e24680b25_1.0.0.0_neutral__x3yxt49xnf64r</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>6d2504b3-f8bf-4b44-9116-556e24680b25_x3yxt49xnf64r!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>6d2504b3-f8bf-4b44-9116-556e24680b25</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Henry Deng</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-09-09T07:07:16.059</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\index.html">
+      <PackagePath>index.html</PackagePath>
+      <Modified>2018-09-09T08:40:18.329</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\tetht.html">
+      <PackagePath>js\tetht.html</PackagePath>
+      <Modified>2018-09-06T00:44:17.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\StoreLogo.png">
+      <PackagePath>images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-07-31T23:35:32.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\main.js">
+      <PackagePath>js\main.js</PackagePath>
+      <Modified>2018-09-09T08:39:40.695</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\orderSoft.js">
+      <PackagePath>js\orderSoft.js</PackagePath>
+      <Modified>2018-09-09T07:30:56.703</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2018-09-09T08:05:09.333</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\js\README.md">
+      <PackagePath>js\README.md</PackagePath>
+      <Modified>2018-09-06T00:44:17.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Henry Deng\source\repos\Kitchen\Kitchen\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-09-09T07:07:15.847</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
