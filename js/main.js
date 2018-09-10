@@ -12,14 +12,10 @@ window.onload = async () => {
     document.getElementById("btnNext").onclick = async () => {
         try {
             var ip = document.getElementById("ip").value;
-            console.log('fuckingwork')
             await kitchen.init(ip);
-            console.log('help1')
             document.getElementById("serverAuthenticate").classList.add("hide");
-            console.log("help")
         } catch (error) {
             document.getElementById("wrongIP").innerHTML = error.toString();
-            
         }
     }
     // Start the timer

@@ -68,9 +68,9 @@
     <Content Include="images\Wide310x150Logo.scale-200.png" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />
-    <Content Include="js\orderSoft.js" />
-    <Content Include="js\README.md" />
-    <Content Include="js\tetht.html" />
+    <Content Include="js\ordersoft-client-js\orderSoft.js" />
+    <Content Include="js\ordersoft-client-js\README.md" />
+    <Content Include="js\ordersoft-client-js\tetht.html" />
     <None Include="Kitchen_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
