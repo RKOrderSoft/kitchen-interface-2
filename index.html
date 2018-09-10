@@ -13,7 +13,8 @@
     </div>
     <div id="orders-container">
         <template id="displayOrder">
-            <!--<p id="tableNum"></p>-->
+            <!--<p class="tableNum"></p>-->
+            <!--<p class="orderTime>-->
         </template>
         <div class="order">Content goes here!</div>
         <div class="order">Content goes here!</div>
@@ -24,23 +25,24 @@
         <div class="order">Content goes here!</div>
         <div class="order">Content goes here!</div>
     </div>
-    <div id="login" class="modal">
+    <div id="modalAuthenticate" class="modal">
         <div class="modal-content">
+            <!--checks ip input to server-->
             <div id="serverAuthenticate">
                 <p1>Enter server IP</p1>
-                <input type="text" placeholder="Enter OrderSoft IP" id="ip" />
+                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" />/</p>
+               
+                <button id="btnNext">Next</button> 
             </div>
-            <button id="btnNext">Next</button>
-            <div>
+            <!-- log in -->
+            <div id="userLogin" class="hide">
                 <p1>Username</p1>
-                <input disabled="disabled" type="text" placeholder="Enter username" id="username">
-            </div>
-            <div>
+                <input type="text" placeholder="Enter username" id="username">            
                 <p1>Password</p1>
-                <input disabled="disabled" type="text" placeholder="Enter password" id="password">
+                <input type="text" placeholder="Enter password" id="password">
+                <button id="btnLogin">Log in</button>
+                <button id="btnReturn">Return to server input</button>
             </div>
-
-            <button disabled="disabled" id="btnLogin">Log in</button>
         </div>
     </div>
 
