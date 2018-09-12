@@ -1,15 +1,9 @@
 ﻿var kitchen = new orderSoftClient();  
 
-window.onload = async () => {
-    // Get the modal
-    var modal = document.getElementById('model-content');
-    /*
-    // Get the button that opens the modal
-    var btn = document.getElementById("viewHistory");
-    */
-    
-    document.getElementById("modalAuthenticate").classList.add("shown");
+window.onload = async () => { 
 
+    document.getElementById("modalAuthenticate").classList.add("shown");
+    document.getElementById("viewHistory").classList.add('hide')
     //check server ip
     document.getElementById("btnNext").onclick = async () => {
         try {
@@ -23,23 +17,28 @@ window.onload = async () => {
         }
     }
 
+
     //user login  
     document.getElementById("btnLogin").onclick = async () => {
         try {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
             await kitchen.authenticate(username, password);
-            document.getElementById("modalAuthenticate").classList.remove("shown");
-            getOrderItems();
-            setInterval(getOrderItems, 3000);
         }
+
         catch (error) {
             document.getElementById("wrongLogin").innerHTML = "Wrong username/password"
         }
+        document.getElementById("modalAuthenticate").classList.remove("shown");
+        getOrderItems();
+        setInterval(getOrderItems, 3000);
     }
     document.getElementById("refresh").onclick = () => {
         clearOrders();
         getOrderItems();
+    }
+    document.getElementById("viewHistory").onclick = function () {
+        document.getElementById("orderHistory").classList.add('shown')
     }
 
     // get system time
@@ -76,15 +75,13 @@ async function displayOrderItems(orderToDisplay) {
     }
     // Adding data to fields
     newOrder.querySelector(".displayTableNumber").innerHTML = orderToDisplay.tableNumber;
-    newOrder.querySelector(".orderComplete").onclick = () => {
+    newOrder.querySelector(".orderComplete").onclick = () => { //mark order done
         kitchen.markOrderMade('tableNumber', orderToDisplay.tableNumber);
-        console.log("orderComplete");
     }
     //displaying notes
     newOrder.querySelector(".displayNotes").innerHTML = orderToDisplay.notes;
     var container = document.getElementById("orders-container");
     await container.appendChild(newOrder);
-    
 }
 
 //translate item in order to dish id and size
@@ -143,3 +140,6 @@ function clearOrders() {
         container.removeChild(container.firstChild);
     }
 };
+
+function undoOrder() {
+}
