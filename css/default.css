@@ -37,8 +37,6 @@
 }
 
 /*modal background*/
-
-
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -110,12 +108,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 100%;
+    overflow: scroll;
 }
 
 .order {
     width: calc((100% / 5) - 5px);
-    height: 100px;
+    height: 75%;
     background: black;
     color: white;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.orderBanner{
+    width: 100%;
+    display: flex;
+}
+.displayTableNumber {
+    text-align: left;
+    width: 48%;
+
+}
+.displayOrderTime {
+    text-align: right;
+    align-items:flex-end;
+    width: 48%;
+}
+
+.orderComplete {
+    height: 20px;
+    position: relative;
+    width: 30%;
+    bottom: 10px:
 }
