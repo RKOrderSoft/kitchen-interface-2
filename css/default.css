@@ -111,52 +111,85 @@
     flex-wrap: wrap;
     align-content:flex-start;
     justify-content: flex-start;
-    height: 100%;
-    min-height: 80%;
+    height: calc(100% - 75px);
     border-radius: 10px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .order {
-    width: calc((100% / 4) - 10px);
+    width: calc((100% / 4) - 25px);
     min-height: 300px;
     background: black;
     color: white;
-    margin: 5px;
+    margin: 1px 0px 0px 1px;
     padding: 10px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
 .orderBanner {
     width: 100%;
-    height: 15%;
+    height: 20px;
     margin: -10px;
     padding: 10px;
     display: flex;
     background-color: #9DA3A3;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 .displayTableNumber {
-    text-align: center;
-    width: 48%;
-    padding: 10px;
+    text-align: left;
+    width: 50%;
 }
 .displayOrderTime {
-    text-align: center;
+    text-align: right;
     align-items:flex-end;
-    width: 48%;
-    padding: 10px;
+    width: 50%;
 }
 
-.orderComplete {
-    height: 40px;
-    width: 50%;
-    bottom: 0px;
-    border-radius: 10px;
-    padding: 10px;
+button {
+    background: linear-gradient(#909090, #808080);
+    /*border: 2px solid gray;*/
+    border: none;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+    padding: 7px 14px;
+    border-radius: calc(1em + 10px);
+    cursor: pointer;
+    color: #F5F5F5;
+    font-family: inherit;
+}
+
+button:hover {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    background: linear-gradient(#878787, #777777);
+}
+
+button:active {
+    background: linear-gradient(#808080, #707070);
 }
 #viewHistory {
     display: block;
+}
+
+li {
+    list-style: none;
+}
+
+.displayDishes {
+    padding: 20px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 5px;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+.displayDishes li {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    padding: 5px;
+}
+
+.displayNotes {
+    margin-bottom: 10px;
 }

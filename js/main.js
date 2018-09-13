@@ -22,20 +22,20 @@ window.onload = async () => {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
             await kitchen.authenticate(username, password);
-        }
 
-        catch (error) {
+            document.getElementById("modalAuthenticate").classList.remove("shown");
+            getOrderItems();
+            setInterval(getCompletedOrder, 3000);
+            setInterval(getOrderItems, 3000);
+            window.setTimeout(getOrderItems, 500);
+        } catch (error) {
             document.getElementById("wrongLogin").innerHTML = "Wrong username/password"
         }
-        document.getElementById("modalAuthenticate").classList.remove("shown");
-        getOrderItems();
-        setInterval(getCompletedOrder, 3000);
-        setInterval(getOrderItems, 3000);
+        
     }
 
     //refresh page
     document.getElementById("refresh").onclick = () => {
-        clearOrders();
         getOrderItems();
     }
 
@@ -49,6 +49,8 @@ window.onload = async () => {
     // get system time
     setInterval(timerTick, 500);
 }
+
+
 //get unpaid orders
 async function getCompletedOrder() {
     var completeOrderIds = (await kitchen.unpaidOrders()).unpaidOrders; //get unpaid orders
@@ -81,7 +83,7 @@ async function displayCompletedOrders(orderToDisplay) {
     }
     newOrder.appendChild(document.createElement('td').innerHTML = orderToDisplay.tableNumber);
     newOrder.appendChild(document.createElement('td').innerHTML = orderToDisplay.timecompleted);
-    document.getElementById("completeOrdrs").appendChild(newOrder);
+    document.getElementById("completeOrders").appendChild(newOrder);
     
 }
 //get open orders and display them
@@ -121,10 +123,18 @@ async function getOrderItem(orderToDisplay) {
         var dishName = await getDishName(dishId);
         var newDish = document.createElement('li');
 
-        newDish.appendChild(document.createTextNode(dishName.dishName)); //display dishName
+        var nameSpan = document.createElement("span");
+        nameSpan.classList.add("nameSpan");
+        nameSpan.classList.add("flex-spacer");
+        nameSpan.innerHTML = dishName.dishName
+
+        newDish.appendChild(nameSpan); //display dishName
         //if size is defined insert size name
         if (dishName.sizeName !== undefined) {
-            newDish.appendChild(document.createTextNode(dishName.sizeName)); //display size
+            var sizeSpan = document.createElement("span");
+            sizeSpan.classList.add("sizeSpan");
+            sizeSpan.innerHTML = dishName.sizeName;
+            newDish.appendChild(sizeSpan); //display size
         };
 
         //add newDish to new Order window
@@ -133,14 +143,17 @@ async function getOrderItem(orderToDisplay) {
 
     // Adding data to fields
     var orderTime = orderDisplayTime(orderToDisplay.timeSubmitted);
-    newOrder.querySelector(".displayOrderTime").innerHTML = orderTime; //add time submitted to order
-    newOrder.querySelector(".displayTableNumber").innerHTML = orderToDisplay.tableNumber; // add table number
+    newOrder.querySelector(".displayOrderTime").innerHTML = "Submitted: " + orderTime; //add time submitted to order
+    newOrder.querySelector(".displayTableNumber").innerHTML = "Table " + orderToDisplay.tableNumber; // add table number
     newOrder.querySelector(".orderComplete").onclick = () => { //mark order made
         kitchen.markOrderMade('orderId', orderToDisplay.orderId);
+        getOrderItem();
     }
     
     //displaying notes
-    newOrder.querySelector(".displayNotes").innerHTML = orderToDisplay.notes;
+    if (orderToDisplay.notes) {
+        newOrder.querySelector(".displayNotes").innerHTML = "Notes: " + orderToDisplay.notes;
+    }
 
     return newOrder;
 }   

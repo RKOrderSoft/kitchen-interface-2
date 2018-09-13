@@ -39,7 +39,6 @@
     </div>
 
     <div id="footer">
-        <button class="flex-button">Undo</button>
         <button class="flex-button" id="refresh">Refresh</button>
         <button class="flex-button" id="viewHistory">History</button>
 
@@ -47,16 +46,15 @@
             <div class="modal-content">
                 <span class="close" id="close">&times;</span>
                 <table id="completeOrders">
-                    <tr id="completedOrderLabels">
-                        <td id="compeltedOrderId">Order Id</td>
-                        <td id="trcompletedOrderDishes">
-                            <ul id="completedOrderDishes">
-                                Dishes
-                            </ul>
-                        </td>
-                        <td id="completedOrderTimeSubmitted">Time Submitted</td>
-                        <td id="completedOrderNotes">Notes</td>
-                    </tr>
+                    <thead>
+                        <td>Order Id</td>
+                        <td>Dishes</td>
+                        <td>Time Submitted</td>
+                        <td>Notes</td>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
                 </table>
             </div>
         </div> 
@@ -68,10 +66,9 @@
                 <label class="displayTableNumber"></label>
                 <label class="displayOrderTime"></label>
             </div>
-            <ul class="displayDishes displayDishSizes">
-                Dishes
-            </ul>
-            <div class="displayNotes">Notes</div>
+            <ul class="displayDishes displayDishSizes"></ul>
+            <div class="flex-spacer"></div>
+            <div class="displayNotes"></div>
             <button class="orderComplete">Complete Order</button>
         </div>
     </template>
