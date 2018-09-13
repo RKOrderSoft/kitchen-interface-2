@@ -20,7 +20,7 @@
             <!--checks ip input to server-->
             <div id="serverAuthenticate">
                 <p1>Enter server IP</p1>
-                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" value="10.0.0.85:8080">/</p>
+                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" value="ordersoft.pw:3141">/</p>
                 <p id="wrongIP"></p>
                 <button id="btnNext">Next</button> 
             </div>
@@ -46,7 +46,18 @@
         <div id="orderHistory" class="modal">
             <div class="modal-content">
                 <span class="close" id="close">&times;</span>
-                <p>big ol table of orders</p>
+                <table id="completeOrders">
+                    <tr id="completedOrderLabels">
+                        <td id="compeltedOrderId">Order Id</td>
+                        <td id="trcompletedOrderDishes">
+                            <ul id="completedOrderDishes">
+                                Dishes
+                            </ul>
+                        </td>
+                        <td id="completedOrderTimeSubmitted">Time Submitted</td>
+                        <td id="completedOrderNotes">Notes</td>
+                    </tr>
+                </table>
             </div>
         </div> 
     </div>
@@ -63,6 +74,10 @@
             <div class="displayNotes">Notes</div>
             <button class="orderComplete">Complete Order</button>
         </div>
+    </template>
+    <template id="completedOrderTemplate">
+
+
     </template>
 </body>
 </html>
