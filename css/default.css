@@ -2,6 +2,7 @@
     /* Uncomment this to enable scrolling and zooming
   touch-action: manipulation;
   */
+  font-family: "Segoe UI", sans-serif;
 }
 
 .flex-container {
@@ -41,12 +42,11 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    margin-top: 100px; /* Location of the box */
+    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
@@ -54,17 +54,19 @@
 .modal.shown {
     display: block;
 }
+
 .hide {
     display: none !important;
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #FFFFFF;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    border-radius: 10px;
 }
 
 /* The Close Button */
@@ -94,14 +96,14 @@
 }
 
 #footer {
-    padding: 10px;
     display: flex;
-    justify-content: space-around;
     list-style: square;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     width: 100%;
-    background-color: black;
+    background-color: #393941;
+    align-content: flex-end;
+    align-items: flex-end;
 }
 
 #orders-container {
@@ -109,39 +111,46 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
+    min-height: 80%;
+    border-radius: 10px;
     overflow: scroll;
 }
 
 .order {
-    width: calc((100% / 5) - 5px);
-    height: 75%;
+    width: calc((100% / 4) - 10px);
+    min-height: 300px;
     background: black;
     color: white;
     margin: 5px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
-.orderBanner{
+.orderBanner {
     width: 100%;
     display: flex;
+    background-color: #9DA3A3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .displayTableNumber {
-    text-align: left;
+    text-align: center;
     width: 48%;
 
 }
 .displayOrderTime {
-    text-align: right;
+    text-align: center;
     align-items:flex-end;
     width: 48%;
 }
 
 .orderComplete {
-    height: 20px;
+    height: 40px;
     position: relative;
-    width: 30%;
-    bottom: 10px:
+    width: 50%;
+    bottom: 0px;
+    border-radius: 10px;
 }
 #viewHistory {
-
+    display: block;
 }

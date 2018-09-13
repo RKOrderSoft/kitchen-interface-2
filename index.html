@@ -7,10 +7,12 @@
     <script src="js/main.js"></script>
     <title>Kitchen</title>
 </head>
+
 <body>
     <div class="header">
         <div id="date"></div>
     </div>
+
     <div id="orders-container"></div>
 
     <div id="modalAuthenticate" class="modal">
@@ -18,10 +20,11 @@
             <!--checks ip input to server-->
             <div id="serverAuthenticate">
                 <p1>Enter server IP</p1>
-                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" value="10.219.219.4:8080">/</p>
+                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" value="10.0.0.85:8080">/</p>
                 <p id="wrongIP"></p>
                 <button id="btnNext">Next</button> 
             </div>
+
             <!-- log in -->
             <div id="userLogin" class="hide">
                 <p1>Username</p1>
@@ -38,7 +41,8 @@
     <div id="footer">
         <button class="flex-button">Undo</button>
         <button class="flex-button" id="refresh">Refresh</button>
-        <button class="flex-button history" id="viewHistory">History</button>
+        <button class="flex-button" id="viewHistory">History</button>
+
         <div id="orderHistory" class="modal">
             <div class="modal-content">
                 <span class="close" id="close">&times;</span>
@@ -46,17 +50,18 @@
             </div>
         </div> 
     </div>
-
+    <!--template for order-->
     <template id="orderTemplate">
         <div class="order">
             <div class="orderBanner">
                 <label class="displayTableNumber"></label>
                 <label class="displayOrderTime"></label>
             </div>
-            <ul class="displayDishes displayDishSizes">Dishes
+            <ul class="displayDishes displayDishSizes">
+                Dishes
             </ul>
             <div class="displayNotes">Notes</div>
-            <button class="orderComplete">Complete order</button>
+            <button class="orderComplete">Complete Order</button>
         </div>
     </template>
 </body>
