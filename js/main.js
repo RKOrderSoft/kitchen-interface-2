@@ -60,7 +60,6 @@ async function getCompleteOrders() {
         toDisplay.push(await )
     }
 }*/
-function 
 
 async function getOrderItems() {
     var openOrderIds = (await kitchen.openOrders()).openOrders; // openOrderIds is an array of strings
@@ -82,7 +81,7 @@ async function getOrderItems() {
     toDisplay.forEach((order) => {
         // Add order to container
         container.appendChild(order);
-    })
+    });
 }
 
 
