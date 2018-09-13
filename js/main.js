@@ -31,7 +31,7 @@ window.onload = async () => {
         }
         document.getElementById("modalAuthenticate").classList.remove("shown");
         getOrderItems();
-        setInterval(getOrderItems, 3000);
+        setInterval(getOrderItems, 5000);
     }
     document.getElementById("refresh").onclick = () => {
         clearOrders();
@@ -46,43 +46,49 @@ window.onload = async () => {
 }
 
 async function getOrderItems() {
+    clearOrders();
     var openOrderIds = (await kitchen.openOrders()).openOrders; // openOrderIds is an array of strings
-    openOrderIds.forEach(async (orderToGet) => {
+   
+    for (var i = 0; i < openOrderIds.length; i++) {
+        var orderToGet = openOrderIds[i];
         var currentOrder = (await kitchen.getOrder("orderId", orderToGet)).order; // currentOrder is an order object
         // do whatever with currentOrder here
-        displayOrderItems(currentOrder);
+        await displayOrderItems(currentOrder);
         //setInterval(orderTimer, 1000);
-        clearOrders();
-    })
+        
+    }
 }
+
+
 // display order items
 async function displayOrderItems(orderToDisplay) {
-    var newOrder = document.getElementById("orderTemplate").content.cloneNode(true);//create new instance of orderTemplate
-    var systemTime = timerTick();
-    //separate dishId in dishes
-    var dishesArray = orderToDisplay.dishes.split(","); 
-    for (var i = 0; i < dishesArray.length; i++) { //get dish name from Id
-        var dishId = dishesArray[i];
-        var dishName = await getDishName(dishId);
-        var newDish = document.createElement('li');
-        newDish.appendChild(document.createTextNode(dishName.dishName)); //display dishName
-        //if size is not undefined insert size name
-        if (dishName.sizeName !== undefined) { 
-            newDish.appendChild(document.createTextNode(dishName.sizeName)); //display size
-        };
-        //add newDish to new Order window
-        newOrder.querySelector(".displayDishes").appendChild(newDish);
+        var newOrder =  await document.getElementById("orderTemplate").content.cloneNode(true);//create new instance of orderTemplate
+        var systemTime = timerTick();
+        //separate dishId in dishes
+        var dishesArray = orderToDisplay.dishes.split(",");
+        for (var i = 0; i < dishesArray.length; i++) { //get dish name from Id
+            var dishId = dishesArray[i];
+            var dishName = await getDishName(dishId);
+            var newDish = document.createElement('li');
+            newDish.appendChild(document.createTextNode(dishName.dishName)); //display dishName
+            //if size is not undefined insert size name
+            if (dishName.sizeName !== undefined) {
+                newDish.appendChild(document.createTextNode(dishName.sizeName)); //display size
+            };
+            //add newDish to new Order window
+            newOrder.querySelector(".displayDishes").appendChild(newDish);
+        }
+        // Adding data to fields
+        newOrder.querySelector(".displayTableNumber").innerHTML = orderToDisplay.tableNumber;
+        newOrder.querySelector(".orderComplete").onclick = () => { //mark order done
+            kitchen.markOrderMade('tableNumber', orderToDisplay.tableNumber);
+        }
+        //displaying notes
+        newOrder.querySelector(".displayNotes").innerHTML = orderToDisplay.notes;
+        var container = document.getElementById("orders-container");
+        await container.appendChild(newOrder);
+
     }
-    // Adding data to fields
-    newOrder.querySelector(".displayTableNumber").innerHTML = orderToDisplay.tableNumber;
-    newOrder.querySelector(".orderComplete").onclick = () => { //mark order done
-        kitchen.markOrderMade('tableNumber', orderToDisplay.tableNumber);
-    }
-    //displaying notes
-    newOrder.querySelector(".displayNotes").innerHTML = orderToDisplay.notes;
-    var container = document.getElementById("orders-container");
-    await container.appendChild(newOrder);
-}
 
 //translate item in order to dish id and size
 async function getDishName(dishIdString) {
@@ -113,9 +119,9 @@ function timerTick() {
     var year = today.getFullYear();
     var month = today.getMonth();
     var day = today.getDay();
-    var hour = today.getHours();
     var systemMinute = today.getMinutes();
     var systemSecond = today.getSeconds();
+    var hour = today.getHours();
     // Pad minutes and seconds
     systemMinute = checkTime(systemMinute);
     systemSecond = checkTime(systemSecond);
@@ -136,10 +142,8 @@ function checkTime(i) {
 //clear orders container
 function clearOrders() {
     var container = document.getElementById("orders-container");
-    while (container.hasChildNodes) {
+    while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
 };
 
-function undoOrder() {
-}
