@@ -20,28 +20,48 @@
             <!--checks ip input to server-->
             <div id="serverAuthenticate">
                 <p1>Enter server IP</p1>
-                <p>http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip" value="ordersoft.pw:3141">/</p>
+                <p>Server IP: http:// <input type="text" placeholder="Enter OrderSoft IP" id="ip">/</p>
                 <p id="wrongIP"></p>
-                <button id="btnNext">Next</button> 
+                <button id="btnNext">Next</button>
+                <button id="btnhelpAuthenticate">Help</button>
             </div>
-
-            <!-- log in -->
-            <div id="userLogin" class="hide">
-                <p1>Username</p1>
-                <input type="text" placeholder="Enter username" id="username" value="HenryDeng">            
-                <p1>Password</p1>
-                <input type="password" placeholder="Enter password" id="password" value="keyboard">
-                <p id="wrongLogin"></p>
-                <button id="btnLogin">Log in</button>
-                <button id="btnReturn">Return to server input</button>
+                <!--Help button fof server-->
+                <div id="helpAuthenticate" class="modal">
+                    <div class="modal-content">
+                        <p>Get server IP from OrderSoft Admin client.</p>
+                        <p4>HTTP:// is automatically added to user input</p4>
+                        <button id="btncloseHelpAuthenticate">Close</button>
+                    </div>
+                </div>
+                    <!-- log in -->
+                    <div id="userLogin" class="hide">
+                        <p1>Username</p1>
+                        <input type="text" placeholder="Enter username" id="username">
+                        <p1>Password</p1>
+                        <input type="password" placeholder="Enter password" id="password"/>
+                        <p id="wrongLogin"></p>
+                        <button id="btnLogin">Log in</button>
+                        <button id="btnReturn">Return to server input</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
     <div id="footer">
         <button class="flex-button" id="refresh">Refresh</button>
-        <button class="flex-button" id="viewHistory">History</button>
-
+        <button class="flex-button" id="btnmenuHelp">Help</button>
+        <button class="flex-button" id="btnLogOut">Log Out</button>
+        <!--Kitchen help modal-->
+        <div id="kitchenHelp" class="modal">
+            <div class="modal-content">
+                <h1>Kitchen Help Menu</h1>
+                <p>
+                    Orders may take up to three seconds to update.
+                    Open orders are automatically retrieved from the server.
+                    The complete order button marks order as complete and unpaid.
+                </p>
+                <button id="closeKitchenHelp">Close</button>
+            </div>
+        </div>
         <div id="orderHistory" class="modal">
             <div class="modal-content">
                 <span class="close" id="close">&times;</span>
