@@ -19,8 +19,8 @@ window.onload = async () => {
         try {
             var username = document.getElementById("username").value; //enter username
             var password = document.getElementById("password").value; //enter password
-            await kitchen.authenticate(username, password);
-
+            var response = kitchen.authenticate(username, password);
+            await response;        
             document.getElementById("modalAuthenticate").classList.remove("shown");
             getOrderItems();
             setInterval(getUnpaidOrders, 3000); //timer to refresh history of orders
